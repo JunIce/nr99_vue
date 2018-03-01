@@ -25,12 +25,10 @@
       </div>
       <div class="main_count">
         <span class="main_like" onclick="bAct.btnLove(this,2,7790)">喜欢<i class="count">{{detail.likenum}}</i></span>
-        <span class="main_collect" id="collect-add_1" data-classid="2" data-id="7790"><span>收藏</span><i class="count">{{detail.favanum}}</i></span>
-        <span href="javascript:;" class="main_share albumshare">分享
-         <div class="bdsharebuttonbox shareList cl bdshare-button-style1-24" data-bd-bind="1519786527994">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a></div>
-
-    </span>
+        <span class="main_collect" id="collect-add_1" data-classid="2" data-id="7790">
+            <span>收藏</span>
+            <i class="count">{{detail.favanum}}</i>
+        </span>
       </div>
       <div class="commodity-response">
         <ul class="ul-tabbar">
@@ -43,9 +41,9 @@
             </div>
 
             <div class="story-editor cl">
-              <span class="postitem-avatar">
-    								<img src="/assets/images/member_36x36.gif" alt="">
-    							</span>
+                <span class="postitem-avatar">
+    				<img src="/assets/images/member_36x36.gif" alt="">
+    			</span>
               <div class="no-login-pl">
                 <div class="pl_tip_login">
                   您还没登录，请<a href="javascript:;" onclick="upload.login()">登录</a>或<a href="javascript:;" onclick="upload.register()">注册</a>后再来评论！

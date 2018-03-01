@@ -5,6 +5,11 @@ import Content from '../components/Content'
 
 const routes = [
     {
+        path: '/',
+        name: 'index',
+        component: ListMain
+    },
+    {
         path: '/show/:classname',
         name: 'show',
         component: ListMain

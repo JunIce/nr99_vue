@@ -17,21 +17,22 @@
 
     <div class="headRight">
       <!--登录区域 start-->
-
       <div class="noLogin">
-
         <a href="javascript:;" class="regLink y">注册</a>
         <div class="preLine y"></div>
         <a href="javascript:;" class="loginLink y">登录</a>
       </div>
       <!--登录区域 end-->
     </div>
+
   </div>
   <div id="column_list">
     <div class="column_list wrap cl">
       <ul>
+          <li><router-link to="/" exact active-class="on">首页</router-link></li>
+          <li class="pre">|</li>
         <template v-for="(m) in menu">
-            <li ><router-link :to="{ path: '/show/' + m.classpath , query:{ classid: m.classid}}" >{{m.classname}}</router-link></li>
+            <li><router-link :to="{ path: '/show/' + m.classpath , query:{ classid: m.classid}}" active-class="on" >{{m.classname}}</router-link></li>
             <li class="pre">|</li>
         </template>
         <li class="last"><a href="/e/tool/feedback/?bid=1">问题反馈</a></li>
@@ -60,7 +61,7 @@ export default {
         })
         .then(res => res.json())
         .then(data => {
-            this.menu = data
+            this.menu = this.menu.concat(data)
         })
         .catch(err => {
             //console.error(err)

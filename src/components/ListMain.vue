@@ -20,13 +20,13 @@ export default {
     data() {
         return {
             cont: [],
-            classid: '',
+            page: 1,
+            pageBol: false
         }
     },
     mounted() {
-        // this.$nextTick(function () {
-        //     window.addEventListener('scroll', this.onScroll)
-        // })
+        this.fetchData(this.$route)
+        window.addEventListener('scroll', this.onScroll)
     },
     methods:{
         onScroll() {
@@ -34,37 +34,42 @@ export default {
             let winHeight =  document.body.offsetHeight;
             let innerHeight = window.innerHeight;
 
-            if(parseInt(winHeight - scrollTop - innerHeight) < 350)  console.log(parseInt(winHeight - scrollTop))
-        }
-    },
-    beforeUpdate() {
-        let classid = this.$route.query.classid;
-        this.classid = classid
-    },
-    created() {
-        fetch(api.homeNewInfo,{
-            method: 'GET',
-        })
-        .then(res => res.json())
-        .then(data => {
-            this.cont = data
-        })
-        .catch(err => {
-            console.error(err)
-        })
-    },
-    watch: {
-        classid:function(val){
-            fetch(api.classInfo + '/' + val,{
+            this.pageBol = parseInt(winHeight - scrollTop - innerHeight) < 350 ? true : false;
+        },
+        fetchData(route) {
+            let routeName = route.name;
+            let classid = route.query.classid;
+            let url = routeName == 'index' ? api.homeNewInfo : api.classInfo + '/' + classid;
+
+            url += '?page='+ this.page +'&page_size=15'
+
+            fetch(url ,{
                 method: 'GET',
             })
             .then(res => res.json())
             .then(data => {
-                this.cont = data
+                this.cont = this.cont.concat(data);
             })
             .catch(err => {
                 console.error(err)
             })
+        }
+    },
+    watch: {
+        '$route'(to, from) {
+            if(to.path !== from.path) {
+                this.cont=[]
+                this.page = 1
+                this.fetchData(to)
+            }
+        },
+        pageBol(val) {
+            if(val) {
+                this.page += 1;
+            }
+        },
+        page(page){
+            this.fetchData(this.$route)
         }
     },
     components:{
