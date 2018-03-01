@@ -1,12 +1,13 @@
 # NR99.com WROK DEMO BY VUE
 
+## 首页界面
 ![首页](https://github.com/JunIce/nr99_vue/blob/master/1.png)
-
+## 栏目页
 ![栏目页](https://github.com/JunIce/nr99_vue/blob/master/2.png)
-
+## 内容页
 ![内容页](https://github.com/JunIce/nr99_vue/blob/master/3.png)
 
-## Build Setup
+## 安装教程
 
 ``` bash
 # install dependencies
