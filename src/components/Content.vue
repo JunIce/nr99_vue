@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
 <div id="goodsMain" class="wrap goodsContent cl">
   <div class="goodsContLeft z">

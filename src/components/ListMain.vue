@@ -1,30 +1,44 @@
+/* eslint-disable */
 <template>
     <div class="wrap contMain cl">
-        <div class="mainList z">
-            <ul class="main-card cl" >
-                <template v-for="m in cont">
-                    <List  :detail="m"/>
-                </template>
-            </ul>
+        <div class="mainMenu cl">
+            <div class="menu_alls cl">
+                <div class="menu_all menu_all_1 z" v-for="(tag,index) in infoTags">
+                    <div class="menu_allt cl"><h3>{{index}}</h3></div>
+                    <ul>
+                        <li class="z" v-for="t in tag"><router-link :to="{path: t.tpath}">{{t.tname}}</router-link></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="pageIndex z">
-            <a href="/show/nvzhuang/">首页</a>
-            <a href="/show/nvzhuang/3.html">上一页</a>
-            <a href="/show/nvzhuang/2.html">2</a>
-            <a href="/show/nvzhuang/3.html">3</a>
-            <b>4</b>
-            <a href="/show/nvzhuang/5.html">5</a>
-            <a href="/show/nvzhuang/6.html">6</a>
-            <a href="/show/nvzhuang/7.html">7</a>
-            <a href="/show/nvzhuang/8.html">8</a>
-            <a href="/show/nvzhuang/9.html">9</a>
-            <a href="/show/nvzhuang/10.html">10</a>
-            <a href="/show/nvzhuang/11.html">11</a>
-            <a href="/show/nvzhuang/12.html">12</a>
-            <a href="/show/nvzhuang/5.html">下一页</a>
-            <a href="/show/nvzhuang/162.html">尾页</a>
-        </div>
+
+                    <div class="mainList z">
+                        <ul class="main-card cl" >
+                            <template v-for="m in cont">
+                                <List  :detail="m"/>
+                            </template>
+                        </ul>
+                    </div>
+                    <div class="pageIndex z">
+                        <a href="/show/nvzhuang/">首页</a>
+                        <a href="/show/nvzhuang/3.html">上一页</a>
+                        <a href="/show/nvzhuang/2.html">2</a>
+                        <a href="/show/nvzhuang/3.html">3</a>
+                        <b>4</b>
+                        <a href="/show/nvzhuang/5.html">5</a>
+                        <a href="/show/nvzhuang/6.html">6</a>
+                        <a href="/show/nvzhuang/7.html">7</a>
+                        <a href="/show/nvzhuang/8.html">8</a>
+                        <a href="/show/nvzhuang/9.html">9</a>
+                        <a href="/show/nvzhuang/10.html">10</a>
+                        <a href="/show/nvzhuang/11.html">11</a>
+                        <a href="/show/nvzhuang/12.html">12</a>
+                        <a href="/show/nvzhuang/5.html">下一页</a>
+                        <a href="/show/nvzhuang/162.html">尾页</a>
+                    </div>
+
     </div>
+
 </template>
 
 <script>
@@ -38,7 +52,8 @@ export default {
         return {
             cont: [],
             page: 1,
-            pageBol: false
+            pageBol: false,
+            infoTags: {}
         }
     },
     mounted() {
@@ -66,6 +81,19 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.cont = this.cont.concat(data);
+            })
+            .catch(err => {
+                console.error(err)
+            })
+
+            let url2 = api.infoType + '?classid=' + classid;
+            fetch(url2 ,{
+                method: 'GET',
+            })
+            .then(res => res.json())
+            .then(data => {
+                this.infoTags = data;
+                console.log(this.infoTags)
             })
             .catch(err => {
                 console.error(err)

@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
 <li class="card ">
     <div class="card-main">

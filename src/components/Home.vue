@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
 <div>
 <div id="header" class="cl">

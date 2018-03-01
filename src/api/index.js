@@ -3,5 +3,6 @@ export const api = {
   'siteMenu': url + '/home/classlists',
   'homeNewInfo': url + '/home/newinfolist',
   'classInfo': url + '/home/classinfo',
-  'infoDetail': url + '/home/infodetail'
+  'infoDetail': url + '/home/infodetail',
+  'infoType': url + '/home/infotype'
 }
