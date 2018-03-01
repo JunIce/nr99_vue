@@ -7,6 +7,23 @@
                 </template>
             </ul>
         </div>
+        <div class="pageIndex z">
+            <a href="/show/nvzhuang/">首页</a>
+            <a href="/show/nvzhuang/3.html">上一页</a>
+            <a href="/show/nvzhuang/2.html">2</a>
+            <a href="/show/nvzhuang/3.html">3</a>
+            <b>4</b>
+            <a href="/show/nvzhuang/5.html">5</a>
+            <a href="/show/nvzhuang/6.html">6</a>
+            <a href="/show/nvzhuang/7.html">7</a>
+            <a href="/show/nvzhuang/8.html">8</a>
+            <a href="/show/nvzhuang/9.html">9</a>
+            <a href="/show/nvzhuang/10.html">10</a>
+            <a href="/show/nvzhuang/11.html">11</a>
+            <a href="/show/nvzhuang/12.html">12</a>
+            <a href="/show/nvzhuang/5.html">下一页</a>
+            <a href="/show/nvzhuang/162.html">尾页</a>
+        </div>
     </div>
 </template>
 

@@ -314,7 +314,7 @@ box-shadow: 0 1px 2px 0 rgba(158,158,158,0.2);padding:30px 30px 10px;}
 .mainList .card-hd .img img,.likePart .img img{vertical-align: middle;border-radius: 3px 3px 0 0;}
 .mainList .card-hd .img img:hover,.likePart .img img:hover{filter:alpha(opacity=80); opacity:0.8;}
 .mainList .card-hd{position: relative;height: 260px;overflow: hidden;  border-radius: 3px 3px 0 0;}
-.mainList .card-hd .btn-collect,.mainList .card-hd .btn-love{font-size: 12px;-webkit-border-radius: 4px;-moz-border-radius: 4px;-ms-border-radius: 4px;border-radius: 4px;padding:8px 15px;display: none;vertical-align: middle;cursor: pointer;position:absolute;z-index:12;top:20px;}
+.mainList .card-hd .btn-collect,.mainList .card-hd .btn-love{font-size: 12px;-webkit-border-radius: 4px;-moz-border-radius: 4px;-ms-border-radius: 4px;border-radius: 4px;padding:8px 15px;vertical-align: middle;cursor: pointer;position:absolute;z-index:12;top:20px;}
 .mainList .card-hd .btn-love{padding:8px 12px;}
 .mainList .card-hd .btn-collect{left:20px;background: #db5140;color:#fff;background-image: -webkit-linear-gradient(bottom,#a02713,#c0341e 7%,#e0614d 92%,#ee6f5b);}
 .mainList .card-hd .btn-collect:hover{background: #d8442b;background-image: -webkit-linear-gradient(bottom,#962412,#a83725 7%,#c15848 92%,#d06b5b);}
