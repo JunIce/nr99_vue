@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
     <div class="wrap contMain cl">
-        <div class="mainMenu cl">
+        <div class="mainMenu cl" v-if="this.$route.name !== 'index'">
             <div class="menu_alls cl">
                 <div class="menu_all menu_all_1 z" v-for="(tag,index) in infoTags">
                     <div class="menu_allt cl"><h3>{{index}}</h3></div>
